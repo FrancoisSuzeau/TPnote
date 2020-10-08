@@ -1,40 +1,53 @@
 package com.uca;
 
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.AfterAll;
 import java.util.concurrent.Callable;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
 
-import java.util.ArrayList; //pour les premiers écrit de isAGoodRoman
+import java.util.ArrayList; 
 import java.util.Iterator;
 import java.util.List;
 import java.util.Arrays;
 
 public class Tests {
 
-    private List<String> RomanNumberList = Arrays.asList("I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X");
-	
-	@Test
-	/*public void testConverter(){
-		assertThat(RomanConverter.getRomanFromNumber(4), equalTo("IV"));
-		assertThat(exceptionOf(() -> RomanConverter.getRomanFromNumber(-2)), instanceOf(IllegalArgumentException.class));
-	}*/
-	
-    public void allSuccessfullTest()
+    private static List<String> RomanNumberList;
+
+    @BeforeAll
+    public static void initList()
     {
-        //isGoodDecimal();
-        isAGoodRoman();
+        RomanNumberList = new ArrayList<>(Arrays.asList("I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X"));
     }
 
-    public void isGoodDecimal()
+    @AfterAll
+    public static void finalizeList()
     {
+        RomanNumberList.clear();
+    }
+    
+/**************************************************** Successfull test ****************************************************/
+    @Test
+    public void isGoodDecimal() //verifing if the output string is reach one
+    {
+        Iterator it = RomanNumberList.iterator();
+        int i = 1;
 
+        while(it.hasNext())
+        {
+            assertThat(RomanConverter.getRomanFromNumber(i), equalTo(it.next()));
+            i++;
+        }
     }
 
-    public void isAGoodRoman()
+    @Test
+    public void isAGoodRoman() //verifing if the output integer is reach one
     {
         
-        Iterator it = this.RomanNumberList.iterator();
+        Iterator it = RomanNumberList.iterator();
 
         int i = 1;
         while (it.hasNext())
@@ -44,13 +57,31 @@ public class Tests {
         }
     }
 
-
-    /*public void allFailureTest()
+/**************************************************** failure test ****************************************************/
+    @Test
+    public void exceptionRising() // test the exception rising
     {
+        assertThat(exceptionOf(() -> RomanConverter.getRomanFromNumber(-2)), instanceOf(IllegalArgumentException.class));
+    }
 
-    }*/
+    @Test
+    public void notInteger() //test the none being of integer
+    {
+        Assertions.assertFalse(this::isFalse);
+    }
 
+    boolean isFalse()
+    {
+        boolean retour = true;
+        double a = 7.5;
+        int b = RomanConverter.getNumberFromRoman(RomanConverter.getRomanFromNumber((int)a));
+        if (a != b)
+        {
+            retour = false;
+        }
 
+        return retour;
+    }
 
 
 	

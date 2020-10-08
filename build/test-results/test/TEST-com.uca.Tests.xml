@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.uca.Tests" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-10-07T21:19:17" hostname="francois-HP-ProDesk-600-G1-TWR" time="0.021">
+<testsuite name="com.uca.Tests" tests="4" skipped="0" failures="0" errors="0" timestamp="2020-10-08T16:31:48" hostname="francois-HP-ProDesk-600-G1-TWR" time="0.026">
   <properties/>
-  <testcase name="allSuccessfullTest()" classname="com.uca.Tests" time="0.021"/>
+  <testcase name="exceptionRising()" classname="com.uca.Tests" time="0.017"/>
+  <testcase name="isAGoodRoman()" classname="com.uca.Tests" time="0.002"/>
+  <testcase name="isGoodDecimal()" classname="com.uca.Tests" time="0.001"/>
+  <testcase name="notInteger()" classname="com.uca.Tests" time="0.003"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

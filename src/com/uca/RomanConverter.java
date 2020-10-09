@@ -4,6 +4,7 @@ package com.uca;
 import java.util.LinkedHashMap;
 import java.util.regex.Pattern;
 
+
 public class RomanConverter{
 	
 	// Table des symboles
@@ -30,7 +31,10 @@ public class RomanConverter{
 
 	public static String getRomanFromNumber(int a) throws IllegalArgumentException{
 		//TODO
-
+		if((a < 1) || (a > 3999))
+		{
+			throw new IllegalArgumentException();
+		}
 		
 		switch(a)
 		{
@@ -55,13 +59,57 @@ public class RomanConverter{
 			case 10 :
 				return "X";
 			default :
-				throw new IllegalArgumentException("Roman number is not between 1 and 10");
+				throw new IllegalArgumentException();
 		}
 		
 	}
 	
 	public static int getNumberFromRoman(String a) throws IllegalArgumentException{
 		//TODO
+
+		if(notAllUpperCase(a))
+		{
+			throw new IllegalArgumentException();
+		}
+
+		int 	countChar = 1;
+		int 	parcourString = 0;
+		int 	lengthString = a.length();
+		char 	charToCompare;
+ 
+		while (parcourString < lengthString)
+		{
+			charToCompare = a.charAt(parcourString); //input the char to compare with the others of the string
+			System.out.println("Testing for " + charToCompare);
+			for(int i = parcourString + 1; i < lengthString; i++) //parcour the string right after the one we compare
+			{
+				if(charToCompare != a.charAt(i)) //if the next char isn't the same then we don't need to compare this one with others
+				{
+					System.out.println("Not the same");
+					break;
+				}
+				else if((charToCompare == 'V') || (charToCompare == 'L') || (charToCompare == 'D')) //verifying if there is not an invalide pair : VV, LL, DD
+				{
+					if(a.charAt(i) == charToCompare)
+					{
+						throw new IllegalArgumentException();
+					}
+				}
+				else if(a.charAt(i) == charToCompare) //counting the number time there is the same char
+				{
+					System.out.println("same and not V or L or D");
+					countChar++;
+					if(countChar >= 4) //if countChar is superior than 3 there is a number of invalide repetition of the char
+					{
+						throw new IllegalArgumentException();
+					}
+				}
+			}
+			
+			System.out.println("No invalide repetitive char");
+			countChar = 1;
+			parcourString++;
+		}
 
 		switch(a)
 		{
@@ -86,7 +134,35 @@ public class RomanConverter{
 			case "X" :
 				return 10;
 			default:
-				throw new IllegalArgumentException("Roman number is not between 1 and 10");
+				throw new IllegalArgumentException();
 		}
+
 	}
+
+	public static boolean notAllUpperCase(String ab)
+	{
+		for (int i = 0; i < ab.length(); i++)
+		{
+			if(Character.isLowerCase(ab.charAt(i)))
+			{
+				return true;
+			}
+		}
+
+		return false;
+	}
+
+
+	/*public static boolean rightSenseReading(String a)
+	{
+		a.length();
+		char currentChar;
+		int i = a.length();
+		while(i > -1)
+		{
+			i--;
+		}
+
+		return true;
+	}*/
 }

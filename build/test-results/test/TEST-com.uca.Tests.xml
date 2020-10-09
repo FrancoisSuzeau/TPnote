@@ -1,10 +1,153 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.uca.Tests" tests="4" skipped="0" failures="0" errors="0" timestamp="2020-10-08T16:31:48" hostname="francois-HP-ProDesk-600-G1-TWR" time="0.026">
+<testsuite name="com.uca.Tests" tests="10" skipped="0" failures="0" errors="0" timestamp="2020-10-09T15:24:50" hostname="francois-HP-ProDesk-600-G1-TWR" time="0.061">
   <properties/>
-  <testcase name="exceptionRising()" classname="com.uca.Tests" time="0.017"/>
-  <testcase name="isAGoodRoman()" classname="com.uca.Tests" time="0.002"/>
+  <testcase name="pairRepetitive()" classname="com.uca.Tests" time="0.025"/>
+  <testcase name="exceptionRising()" classname="com.uca.Tests" time="0.002"/>
+  <testcase name="tooMuchRepetiveSymbols()" classname="com.uca.Tests" time="0.004"/>
+  <testcase name="isAGoodRoman()" classname="com.uca.Tests" time="0.006"/>
+  <testcase name="outsideInterval()" classname="com.uca.Tests" time="0.002"/>
+  <testcase name="oneLowerCase()" classname="com.uca.Tests" time="0.002"/>
   <testcase name="isGoodDecimal()" classname="com.uca.Tests" time="0.001"/>
-  <testcase name="notInteger()" classname="com.uca.Tests" time="0.003"/>
-  <system-out><![CDATA[]]></system-out>
+  <testcase name="toRomanUpperCase()" classname="com.uca.Tests" time="0.004"/>
+  <testcase name="notInteger()" classname="com.uca.Tests" time="0.006"/>
+  <testcase name="nEqualN()" classname="com.uca.Tests" time="0.004"/>
+  <system-out><![CDATA[Testing for V
+Testing for L
+Testing for D
+Testing for X
+same and not V or L or D
+No invalide repetitive char
+Testing for X
+No invalide repetitive char
+Testing for X
+Not the same
+No invalide repetitive char
+Testing for I
+same and not V or L or D
+same and not V or L or D
+same and not V or L or D
+Testing for I
+same and not V or L or D
+same and not V or L or D
+same and not V or L or D
+Testing for I
+No invalide repetitive char
+Testing for I
+same and not V or L or D
+No invalide repetitive char
+Testing for I
+No invalide repetitive char
+Testing for I
+same and not V or L or D
+same and not V or L or D
+No invalide repetitive char
+Testing for I
+same and not V or L or D
+No invalide repetitive char
+Testing for I
+No invalide repetitive char
+Testing for I
+Not the same
+No invalide repetitive char
+Testing for V
+No invalide repetitive char
+Testing for V
+No invalide repetitive char
+Testing for V
+Not the same
+No invalide repetitive char
+Testing for I
+No invalide repetitive char
+Testing for V
+Not the same
+No invalide repetitive char
+Testing for I
+same and not V or L or D
+No invalide repetitive char
+Testing for I
+No invalide repetitive char
+Testing for V
+Not the same
+No invalide repetitive char
+Testing for I
+same and not V or L or D
+same and not V or L or D
+No invalide repetitive char
+Testing for I
+same and not V or L or D
+No invalide repetitive char
+Testing for I
+No invalide repetitive char
+Testing for I
+Not the same
+No invalide repetitive char
+Testing for X
+No invalide repetitive char
+Testing for X
+No invalide repetitive char
+Testing for V
+Not the same
+No invalide repetitive char
+Testing for I
+same and not V or L or D
+No invalide repetitive char
+Testing for I
+No invalide repetitive char
+Testing for I
+No invalide repetitive char
+Testing for I
+same and not V or L or D
+No invalide repetitive char
+Testing for I
+No invalide repetitive char
+Testing for I
+same and not V or L or D
+same and not V or L or D
+No invalide repetitive char
+Testing for I
+same and not V or L or D
+No invalide repetitive char
+Testing for I
+No invalide repetitive char
+Testing for I
+Not the same
+No invalide repetitive char
+Testing for V
+No invalide repetitive char
+Testing for V
+No invalide repetitive char
+Testing for V
+Not the same
+No invalide repetitive char
+Testing for I
+No invalide repetitive char
+Testing for V
+Not the same
+No invalide repetitive char
+Testing for I
+same and not V or L or D
+No invalide repetitive char
+Testing for I
+No invalide repetitive char
+Testing for V
+Not the same
+No invalide repetitive char
+Testing for I
+same and not V or L or D
+same and not V or L or D
+No invalide repetitive char
+Testing for I
+same and not V or L or D
+No invalide repetitive char
+Testing for I
+No invalide repetitive char
+Testing for I
+Not the same
+No invalide repetitive char
+Testing for X
+No invalide repetitive char
+Testing for X
+No invalide repetitive char
+]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

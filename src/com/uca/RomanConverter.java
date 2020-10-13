@@ -3,6 +3,10 @@ package com.uca;
 
 import java.util.LinkedHashMap;
 import java.util.regex.Pattern;
+import java.util.Iterator;
+import java.util.Map.Entry;
+import java.io.*;
+import java.util.*;
 
 
 public class RomanConverter{
@@ -29,13 +33,30 @@ public class RomanConverter{
 	private static final Pattern VALIDATION_RE = Pattern.compile("^M{0,3}(CM|CD|D?C{0,3})(XC|XL|L?X{0,3})(IX|IV|V?I{0,3})$");
 
 
-	public static String getRomanFromNumber(int a) throws IllegalArgumentException{
-		//TODO
+	public static String getRomanFromNumber(int a) throws IllegalArgumentException
+	{
 		if((a < 1) || (a > 3999))
 		{
 			throw new IllegalArgumentException();
 		}
 		
+		//tools needed to scan the hasmap
+		Set<Entry<String, Integer>> set_hash = SYMBOLS.entrySet();
+		Iterator<Entry<String, Integer>> it = set_hash.iterator();
+
+		Integer number;
+
+		//scanning the hasmap
+		while (it.hasNext())
+		{
+			Entry <String, Integer> key = it.next();
+			number = key.getValue();
+		}
+
+		String romanNum = "";
+		return romanNum;
+		//TODO
+		/*
 		switch(a)
 		{
 			case 1 :
@@ -60,8 +81,7 @@ public class RomanConverter{
 				return "X";
 			default :
 				throw new IllegalArgumentException();
-		}
-		
+		}*/
 	}
 	
 	public static int getNumberFromRoman(String a) throws IllegalArgumentException{

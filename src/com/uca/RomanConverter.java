@@ -35,58 +35,46 @@ public class RomanConverter{
 
 	public static String getRomanFromNumber(int a) throws IllegalArgumentException
 	{
+		
 		if((a < 1) || (a > 3999))
 		{
 			throw new IllegalArgumentException();
 		}
+
+		String romanNum = "";
+		Integer number;
 		
 		//tools needed to scan the hasmap
 		Set<Entry<String, Integer>> set_hash = SYMBOLS.entrySet();
 		Iterator<Entry<String, Integer>> it = set_hash.iterator();
-
-		Integer number;
+		Entry <String, Integer> couple;
 
 		//scanning the hasmap
 		while (it.hasNext())
 		{
-			Entry <String, Integer> key = it.next();
-			number = key.getValue();
+			couple = it.next();
+			number = couple.getValue();
+			while(a >= number)
+			{
+				romanNum = romanNum + couple.getKey();
+				a = a - number;
+			}
 		}
 
-		String romanNum = "";
-		return romanNum;
-		//TODO
-		/*
-		switch(a)
+		if(romanNum.equals("")) // we never are full prepared
 		{
-			case 1 :
-				return "I";
-			case 2 :
-				return "II";
-			case 3 :
-				return "III";
-			case 4 :
-				return "IV";
-			case 5 :
-				return "V";
-			case 6 :
-				return "VI";
-			case 7 :
-				return "VII";
-			case 8:
-				return "VIII";
-			case 9:
-				return "IX";
-			case 10 :
-				return "X";
-			default :
-				throw new IllegalArgumentException();
-		}*/
+			throw new IllegalArgumentException();
+		}
+		else
+		{
+			return romanNum;
+		}
 	}
 	
 	public static int getNumberFromRoman(String a) throws IllegalArgumentException{
-		//TODO
+		
 
+		//Testing if the string is good
 		if(notAllUpperCase(a))
 		{
 			throw new IllegalArgumentException();
@@ -130,28 +118,57 @@ public class RomanConverter{
 			countChar = 1;
 			parcourString++;
 		}
+		
+		//all is good now we can convert into int
+		/*int resultat = 0;
+		int index = 0;
+		
+		//tools needed to scan the hasmap
+		Set<Entry<String, Integer>> set_hash = SYMBOLS.entrySet();
+		Iterator<Entry<String, Integer>> it = set_hash.iterator();
+		Entry <String, Integer> couple;
+
+		//scanning the hasmap
+		while (it.hasNext())
+		{
+			couple = it.next();
+			while(a.substring(index, index + couple.getKey().length()).equals(couple.getKey()))
+			{
+				try {
+					System.out.println("substring : " + a.substring(index, index + couple.getKey().length()));
+					System.out.println("symbole : " + couple.getKey());
+					resultat = resultat + couple.getValue();
+					index = index + couple.getKey().length();
+				} catch(Exception e)
+				{
+					break;
+				}
+				
+			}
+		}
+		return resultat;*/
 
 		switch(a)
 		{
-			case "I" :
+			case "I":
 				return 1;
-			case "II" :
+			case "II":
 				return 2;
-			case "III" :
+			case "III":
 				return 3;
-			case "IV" :
+			case "IV":
 				return 4;
-			case "V" :
+			case "V":
 				return 5;
-			case "VI" :
+			case "VI":
 				return 6;
-			case "VII" :
+			case "VII":
 				return 7;
 			case "VIII":
 				return 8;
 			case "IX":
 				return 9;
-			case "X" :
+			case "X":
 				return 10;
 			default:
 				throw new IllegalArgumentException();

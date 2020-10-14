@@ -4,10 +4,27 @@ public class Start{
 	
 	//Start class
 	public static void main(String[] args){
+
+		RomanNumber roman = new RomanNumber();
+
+		if(args.length == 0)
+		{
+			throw new IllegalArgumentException("No argument found");
+		}
+		else
+		{
+			try {
+				roman.setValue(Integer.parseInt(args[0]));
+			} catch(Exception e)
+			{
+				roman.setRoman(args[0]);
+			}
 		
-		RomanNumber roman = new RomanNumber("IV");
-		System.out.println(roman.getValue());
-		System.out.println(roman.getRoman());
+			System.out.println(roman.getValue());
+			System.out.println(roman.getRoman());
+		}
+		
+		
 		
 		//TODO
 		//Aide pour démarrer : https://git.artheriom.fr/l3-informatique-2020-2021/site-l3/-/tree/master/Genie_Logiciel/HelperTP3

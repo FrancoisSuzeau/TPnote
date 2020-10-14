@@ -46,9 +46,7 @@ public class Tests {
     @Test
     public void isAGoodRoman() //verifing if the output integer is reach one
     {
-        
         Iterator it = RomanNumberList.iterator();
-
         int i = 1;
         while (it.hasNext())
         {
@@ -59,10 +57,10 @@ public class Tests {
 
 /**************************************************** failure test ****************************************************/
     @Test
-    public void exceptionRising() // test the exception rising
+    public void exceptionRising() // test if the exception is rising
     {
         assertThat(exceptionOf(() -> RomanConverter.getRomanFromNumber(-2)), instanceOf(IllegalArgumentException.class));
-        assertThat(exceptionOf(() -> RomanConverter.getNumberFromRoman("XX")), instanceOf(IllegalArgumentException.class));
+        assertThat(exceptionOf(() -> RomanConverter.getNumberFromRoman("IIII")), instanceOf(IllegalArgumentException.class));
     }
 
     @Test
@@ -85,40 +83,57 @@ public class Tests {
     }
 
     @Test
-    public void outsideInterval()
+    public void outsideInterval() //test if there is an exception rising if the value is not include to [1;3999]
     {
         assertThat(exceptionOf(() -> RomanConverter.getRomanFromNumber(4000)), instanceOf(IllegalArgumentException.class));
         assertThat(exceptionOf(() -> RomanConverter.getRomanFromNumber(0)), instanceOf(IllegalArgumentException.class));
     }
 
     @Test
-    public void tooMuchRepetiveSymbols()
+    public void tooMuchRepetiveSymbols() //test the rising except if there is to much illegal repetitive symbol
     {
         assertThat(exceptionOf(() -> RomanConverter.getNumberFromRoman("XIIII")), instanceOf(IllegalArgumentException.class));
         assertThat(exceptionOf(() -> RomanConverter.getNumberFromRoman("IIII")), instanceOf(IllegalArgumentException.class));
+        assertThat(exceptionOf(() -> RomanConverter.getNumberFromRoman("XXXX")), instanceOf(IllegalArgumentException.class));
+        assertThat(exceptionOf(() -> RomanConverter.getNumberFromRoman("LLLL")), instanceOf(IllegalArgumentException.class));
     }
 
     @Test
-    public void pairRepetitive()
+    public void pairRepetitive() //test if the method fail when there is illegal pair repetition
     {
         assertThat(exceptionOf(() -> RomanConverter.getNumberFromRoman("VV")), instanceOf(IllegalArgumentException.class));
         assertThat(exceptionOf(() -> RomanConverter.getNumberFromRoman("LL")), instanceOf(IllegalArgumentException.class));
         assertThat(exceptionOf(() -> RomanConverter.getNumberFromRoman("DD")), instanceOf(IllegalArgumentException.class));
     }
+
+    /*@Test
+    public void illegalPrecedingValue() // test if the method fail because of an illegal preceding value (like VX or XCX)
+    {
+
+    }*/
     
 /**************************************************** validate test ****************************************************/
     @Test
-    public void nEqualN()
+    public void nEqualN() //test the bijection
     {
-        for(int i = 1; i < 11; i++)
+        for(int i = 1; i < 4000; i++)
         {
-            Assertions.assertTrue(RomanConverter.getNumberFromRoman(RomanConverter.getRomanFromNumber(i)) == i);
+                Assertions.assertTrue(RomanConverter.getNumberFromRoman(RomanConverter.getRomanFromNumber(i)) == i);
         }
         
     }
 
     @Test
-    public void toRomanUpperCase()
+    public void romanIsCapital() // test if all the roman are upper case
+    {
+        for(int i = 1; i < 4000; i++)
+        {
+            Assertions.assertTrue(allUpperCase(i));
+        }
+    }
+
+    @Test
+    public void toRomanUpperCase() //verifing if toRoman return upper Case
     {
         Assertions.assertTrue(this::allUpperCase);
     }
@@ -147,8 +162,32 @@ public class Tests {
         }
     }
 
+    boolean allUpperCase(int a)
+    {
+        String testUpperCase = RomanConverter.getRomanFromNumber(a);
+        int strlength = testUpperCase.length();
+        int countUpperCase = 0;
+
+        for(int i = 0; i < strlength; i++)
+        {
+            if(Character.isUpperCase(testUpperCase.charAt(i)))
+            {
+                countUpperCase++;
+            }
+        }
+
+        if(countUpperCase == strlength)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
     @Test
-    public void oneLowerCase()
+    public void oneLowerCase() //verify if the string in fromRoman is not upper case
     {
         assertThat(exceptionOf(() -> RomanConverter.getNumberFromRoman("Xii")), instanceOf(IllegalArgumentException.class));
         assertThat(exceptionOf(() -> RomanConverter.getNumberFromRoman("XiI")), instanceOf(IllegalArgumentException.class));

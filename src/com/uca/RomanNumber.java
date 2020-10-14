@@ -38,15 +38,25 @@ public class RomanNumber extends Number{
 	}
 	
 	
-	
+	public boolean compareToAnotherRomanNumber(RomanNumber anotherRN)
+	{
+		if(Integer.valueOf(this.intValue()).compareTo(Integer.valueOf(anotherRN.intValue())) == 0)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
 	
 	/**
 	* @{inheritDoc}
 	*/
 	@Override
 	public double doubleValue() {
-		// TODO
-		return 0;
+		double dvalue = this.getValue();
+		return dvalue;
 	}
 
 	/**
@@ -54,8 +64,9 @@ public class RomanNumber extends Number{
 	*/
 	@Override
 	public float floatValue() {
-		// TODO
-		return 0;
+		/*float fvalue = this.getValue();
+		return fvalue;*/
+		return this.getValue();
 	}
 
 	/**
@@ -64,7 +75,7 @@ public class RomanNumber extends Number{
 	@Override
 	public int intValue() {
 		// TODO
-		return 0;
+		return this.getValue();
 	}
 
 	/**
@@ -72,13 +83,13 @@ public class RomanNumber extends Number{
 	*/
 	@Override
 	public long longValue() {
-		// TODO
-		return 0;
+		long lvalue = this.getValue();
+		return lvalue;
 	}
 
 	@Override
 	public String toString() {
 		//TODO
-		return "";
+		return this.getRoman();
 	}
 }

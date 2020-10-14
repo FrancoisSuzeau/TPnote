@@ -1,153 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.uca.Tests" tests="10" skipped="0" failures="0" errors="0" timestamp="2020-10-13T17:50:52" hostname="francois-HP-ProDesk-600-G1-TWR" time="0.071">
+<testsuite name="com.uca.Tests" tests="11" skipped="0" failures="0" errors="0" timestamp="2020-10-14T18:54:13" hostname="francois-HP-ProDesk-600-G1-TWR" time="0.076">
   <properties/>
-  <testcase name="pairRepetitive()" classname="com.uca.Tests" time="0.022"/>
-  <testcase name="exceptionRising()" classname="com.uca.Tests" time="0.003"/>
-  <testcase name="tooMuchRepetiveSymbols()" classname="com.uca.Tests" time="0.004"/>
-  <testcase name="isAGoodRoman()" classname="com.uca.Tests" time="0.01"/>
+  <testcase name="pairRepetitive()" classname="com.uca.Tests" time="0.014"/>
+  <testcase name="exceptionRising()" classname="com.uca.Tests" time="0.001"/>
+  <testcase name="tooMuchRepetiveSymbols()" classname="com.uca.Tests" time="0.002"/>
+  <testcase name="isAGoodRoman()" classname="com.uca.Tests" time="0.001"/>
   <testcase name="outsideInterval()" classname="com.uca.Tests" time="0.001"/>
   <testcase name="oneLowerCase()" classname="com.uca.Tests" time="0.002"/>
   <testcase name="isGoodDecimal()" classname="com.uca.Tests" time="0.001"/>
   <testcase name="toRomanUpperCase()" classname="com.uca.Tests" time="0.003"/>
+  <testcase name="romanIsCapital()" classname="com.uca.Tests" time="0.009"/>
   <testcase name="notInteger()" classname="com.uca.Tests" time="0.002"/>
-  <testcase name="nEqualN()" classname="com.uca.Tests" time="0.009"/>
-  <system-out><![CDATA[Testing for V
-Testing for L
-Testing for D
-Testing for X
-same and not V or L or D
-No invalide repetitive char
-Testing for X
-No invalide repetitive char
-Testing for X
-Not the same
-No invalide repetitive char
-Testing for I
-same and not V or L or D
-same and not V or L or D
-same and not V or L or D
-Testing for I
-same and not V or L or D
-same and not V or L or D
-same and not V or L or D
-Testing for I
-No invalide repetitive char
-Testing for I
-same and not V or L or D
-No invalide repetitive char
-Testing for I
-No invalide repetitive char
-Testing for I
-same and not V or L or D
-same and not V or L or D
-No invalide repetitive char
-Testing for I
-same and not V or L or D
-No invalide repetitive char
-Testing for I
-No invalide repetitive char
-Testing for I
-Not the same
-No invalide repetitive char
-Testing for V
-No invalide repetitive char
-Testing for V
-No invalide repetitive char
-Testing for V
-Not the same
-No invalide repetitive char
-Testing for I
-No invalide repetitive char
-Testing for V
-Not the same
-No invalide repetitive char
-Testing for I
-same and not V or L or D
-No invalide repetitive char
-Testing for I
-No invalide repetitive char
-Testing for V
-Not the same
-No invalide repetitive char
-Testing for I
-same and not V or L or D
-same and not V or L or D
-No invalide repetitive char
-Testing for I
-same and not V or L or D
-No invalide repetitive char
-Testing for I
-No invalide repetitive char
-Testing for I
-Not the same
-No invalide repetitive char
-Testing for X
-No invalide repetitive char
-Testing for X
-No invalide repetitive char
-Testing for V
-Not the same
-No invalide repetitive char
-Testing for I
-same and not V or L or D
-No invalide repetitive char
-Testing for I
-No invalide repetitive char
-Testing for I
-No invalide repetitive char
-Testing for I
-same and not V or L or D
-No invalide repetitive char
-Testing for I
-No invalide repetitive char
-Testing for I
-same and not V or L or D
-same and not V or L or D
-No invalide repetitive char
-Testing for I
-same and not V or L or D
-No invalide repetitive char
-Testing for I
-No invalide repetitive char
-Testing for I
-Not the same
-No invalide repetitive char
-Testing for V
-No invalide repetitive char
-Testing for V
-No invalide repetitive char
-Testing for V
-Not the same
-No invalide repetitive char
-Testing for I
-No invalide repetitive char
-Testing for V
-Not the same
-No invalide repetitive char
-Testing for I
-same and not V or L or D
-No invalide repetitive char
-Testing for I
-No invalide repetitive char
-Testing for V
-Not the same
-No invalide repetitive char
-Testing for I
-same and not V or L or D
-same and not V or L or D
-No invalide repetitive char
-Testing for I
-same and not V or L or D
-No invalide repetitive char
-Testing for I
-No invalide repetitive char
-Testing for I
-Not the same
-No invalide repetitive char
-Testing for X
-No invalide repetitive char
-Testing for X
-No invalide repetitive char
-]]></system-out>
+  <testcase name="nEqualN()" classname="com.uca.Tests" time="0.029"/>
+  <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

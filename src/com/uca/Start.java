@@ -14,14 +14,24 @@ public class Start{
 		else
 		{
 			try {
-				roman.setValue(Integer.parseInt(args[0]));
-			} catch(Exception e)
+				roman.setValue(Integer.parseInt(args[0])); // it is a string like 10 or 25 then to int
+			} catch(NumberFormatException e)
 			{
-				roman.setRoman(args[0]);
+				roman.setRoman(args[0]); //it may be is a roman value like IV or XXV
 			}
 		
-			System.out.println(roman.getValue());
-			System.out.println(roman.getRoman());
+			/*System.out.println(roman.getValue());
+			System.out.println(roman.getRoman());*/
+
+			System.out.println("intValue : " + roman.intValue());
+			System.out.println("doubleValue : " + roman.doubleValue());
+			System.out.println("floatValue : " + roman.floatValue());
+			System.out.println("longValue : " + roman.longValue());
+			System.out.println("toString : " + roman.toString());
+
+			System.out.println("is the same ? : " + roman.compareToAnotherRomanNumber(new RomanNumber("VII")));
+
+			
 		}
 		
 		

@@ -9,6 +9,7 @@ import java.io.*;
 import java.util.*;
 
 
+
 public class RomanConverter{
 	
 	// Table des symboles
@@ -38,7 +39,7 @@ public class RomanConverter{
 		
 		if((a < 1) || (a > 3999))
 		{
-			throw new IllegalArgumentException();
+			throw new IllegalArgumentException("Not a validate value. Must be between [1 : 3999]");
 		}
 
 		String romanNum = "";
@@ -63,7 +64,7 @@ public class RomanConverter{
 
 		if(romanNum.equals("")) // we never are full prepared
 		{
-			throw new IllegalArgumentException();
+			throw new IllegalArgumentException("Convert to Roman failed");
 		}
 		else
 		{
@@ -72,12 +73,11 @@ public class RomanConverter{
 	}
 	
 	public static int getNumberFromRoman(String a) throws IllegalArgumentException{
-		
 
 		//Testing if the string is good
 		if(notAllUpperCase(a))
 		{
-			throw new IllegalArgumentException();
+			throw new IllegalArgumentException("There is a least one lower case character");
 		}
 
 		int 	countChar = 1;
@@ -88,92 +88,78 @@ public class RomanConverter{
 		while (parcourString < lengthString)
 		{
 			charToCompare = a.charAt(parcourString); //input the char to compare with the others of the string
-			System.out.println("Testing for " + charToCompare);
 			for(int i = parcourString + 1; i < lengthString; i++) //parcour the string right after the one we compare
 			{
 				if(charToCompare != a.charAt(i)) //if the next char isn't the same then we don't need to compare this one with others
 				{
-					System.out.println("Not the same");
 					break;
 				}
 				else if((charToCompare == 'V') || (charToCompare == 'L') || (charToCompare == 'D')) //verifying if there is not an invalide pair : VV, LL, DD
 				{
 					if(a.charAt(i) == charToCompare)
 					{
-						throw new IllegalArgumentException();
+						throw new IllegalArgumentException("There is a non-authorized pair : " + charToCompare + a.charAt(i));
 					}
 				}
 				else if(a.charAt(i) == charToCompare) //counting the number time there is the same char
 				{
-					System.out.println("same and not V or L or D");
 					countChar++;
 					if(countChar >= 4) //if countChar is superior than 3 there is a number of invalide repetition of the char
 					{
-						throw new IllegalArgumentException();
+						throw new IllegalArgumentException("There is a non-authorized number of the same character : " + charToCompare);
 					}
 				}
 			}
 			
-			System.out.println("No invalide repetitive char");
 			countChar = 1;
 			parcourString++;
 		}
 		
 		//all is good now we can convert into int
-		/*int resultat = 0;
+		int resultat = 0;
 		int index = 0;
+		String compare_and_concan = "";
 		
-		//tools needed to scan the hasmap
-		Set<Entry<String, Integer>> set_hash = SYMBOLS.entrySet();
-		Iterator<Entry<String, Integer>> it = set_hash.iterator();
-		Entry <String, Integer> couple;
-
-		//scanning the hasmap
-		while (it.hasNext())
+		if(a.length() == 1)
 		{
-			couple = it.next();
-			while(a.substring(index, index + couple.getKey().length()).equals(couple.getKey()))
+			resultat = SYMBOLS.get(a);	
+		}
+		else
+		{
+			//tools needed to scan the hasmap
+			Set<Entry<String, Integer>> set_hash = SYMBOLS.entrySet();
+			Iterator<Entry<String, Integer>> it = set_hash.iterator();
+			Entry <String, Integer> couple;
+			
+			//scanning the hasmap
+			while(it.hasNext())
 			{
-				try {
-					System.out.println("substring : " + a.substring(index, index + couple.getKey().length()));
-					System.out.println("symbole : " + couple.getKey());
-					resultat = resultat + couple.getValue();
-					index = index + couple.getKey().length();
-				} catch(Exception e)
+				couple = it.next();
+				for(int i = 0; i < a.length(); i++)
 				{
-					break;
+					if(i >= index && i < index + couple.getKey().length())
+					{
+						compare_and_concan = compare_and_concan + Character.toString(a.charAt(i));
+					}
 				}
+				if(compare_and_concan.equals(couple.getKey()))
+				{
+						resultat = resultat + couple.getValue();
+						index = index + couple.getKey().length();
 				
+						if((couple.getKey() == "I") || (couple.getKey() == "X") || (couple.getKey() == "C") || (couple.getKey() == "M"))
+						{
+							while((index < a.length()) && Character.toString(a.charAt(index - 1)).equals(Character.toString(a.charAt(index))))
+							{
+								index++;
+								resultat = resultat + couple.getValue();
+							}
+						}
+				}
+				compare_and_concan = "";
 			}
 		}
-		return resultat;*/
-
-		switch(a)
-		{
-			case "I":
-				return 1;
-			case "II":
-				return 2;
-			case "III":
-				return 3;
-			case "IV":
-				return 4;
-			case "V":
-				return 5;
-			case "VI":
-				return 6;
-			case "VII":
-				return 7;
-			case "VIII":
-				return 8;
-			case "IX":
-				return 9;
-			case "X":
-				return 10;
-			default:
-				throw new IllegalArgumentException();
-		}
-
+		return resultat;
 	}
 
 	public static boolean notAllUpperCase(String ab)

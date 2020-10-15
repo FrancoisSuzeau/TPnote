@@ -9,5 +9,5 @@
 
 ##Type de binome : Seul
 * J'ai travaillé seul pour des raisons pratique mais j'ai quand même utilisé un dépot git afin de pouvoir avoir accès facilement à mon travail sur mes deux machines (un portable et une tour).
-* Voici le lien github : [FrançoisSuzeau/TPNote](https://github.com/FrancoisSuzeau/TPnote/tree/master)
+* Voici le lien github : [FrançoisSuzeau/TPNote](https://github.com/FrancoisSuzeau/TPnote)
 * Je dépose au cas ou mon travail sur le dépot de moodle

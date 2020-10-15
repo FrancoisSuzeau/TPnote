@@ -3,7 +3,7 @@ package com.uca;
 public class Start{
 	
 	//Start class
-	public static void main(String[] args){
+	public static void main(String[] args) throws IllegalArgumentException{
 
 		RomanNumber roman = new RomanNumber();
 
@@ -29,11 +29,9 @@ public class Start{
 			System.out.println("longValue : " + roman.longValue());
 			System.out.println("toString : " + roman.toString());
 
-			System.out.println("is the same ? : " + roman.compareToAnotherRomanNumber(new RomanNumber("VII")));
-
+			roman.compareToAnotherRomanNumber(new RomanNumber("VII"));
 			
 		}
-		
 		
 		
 		//TODO

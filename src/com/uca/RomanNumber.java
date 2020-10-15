@@ -38,15 +38,20 @@ public class RomanNumber extends Number{
 	}
 	
 	
-	public boolean compareToAnotherRomanNumber(RomanNumber anotherRN)
+	public void compareToAnotherRomanNumber(RomanNumber anotherRN)
 	{
-		if(Integer.valueOf(this.intValue()).compareTo(Integer.valueOf(anotherRN.intValue())) == 0)
+		int comp = Integer.valueOf(this.intValue()).compareTo(Integer.valueOf(anotherRN.intValue()));
+		if( comp == 0)
 		{
-			return true;
+			System.out.println("They are same number");
 		}
-		else
+		else if (comp > 0)
 		{
-			return false;
+			System.out.println(this.intValue() + " is superior to " + anotherRN.intValue());
+		}
+		else if(comp < 0)
+		{
+			System.out.println(this.intValue() + " is inferior to " + anotherRN.intValue());
 		}
 	}
 	
